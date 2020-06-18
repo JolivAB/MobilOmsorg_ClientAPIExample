@@ -1,0 +1,18 @@
+{
+  "name": "moauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lite": "lite-server --port 10001",
+    "start": "npm run lite"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
