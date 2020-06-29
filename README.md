@@ -1,16 +1,5 @@
 # MobilOmsorg_ClientAPIExample
-Example projects for connecting to MobilOmsorg API.
-
----
-title: mobil OMSORG API Key Authentication
-author: Christian Davén, Joliv AB
-date: 2019-04-17
-history:
-- date: 2019-04-17
-  author: CD
-  summary: First version
-toc: no
----
+Example projects for connecting to Mobil Omsorg API.
 
 # Background and Scope
 
