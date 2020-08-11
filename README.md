@@ -3,9 +3,9 @@ Example projects for connecting to Mobil Omsorg API.
 
 # Background and Scope
 
-This document concerns authentication of an external system to mobil OMSORG's API, using API keys.
+This document concerns authentication of an external system to Mobil Omsorg's API, using API keys.
 
-The external system is here called "Acme", and mobil OMSORG is called "MO".
+The external system is here called "Acme", and Mobil Omsorg is called "MO".
 
 # Key Concepts
 
