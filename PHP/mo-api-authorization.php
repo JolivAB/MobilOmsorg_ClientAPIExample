@@ -32,30 +32,30 @@ class Request {
 }
 
 class Credentials {
-    public $apiKey = "";
+	public $apiKey = "";
 	public $apiSecret = "";
 	public $nonce = "";
 	public $timestamp = 0;
 	public $companyCode = "";
-    public $signature = "";
-    
-    function sign($request) {
-        $message = join(" ", [strtoupper($request->method), strtolower($request->path), strtolower($request->contentType), $request->contentHash, $this->timestamp, $this->nonce]);
+	public $signature = "";
+
+	function sign($request) {
+		$message = join(" ", [strtoupper($request->method), strtolower($request->path), strtolower($request->contentType), $request->contentHash, $this->timestamp, $this->nonce]);
 		print("HMAC message to sign: $message\n");
 		$this->signature = base64_encode(hash_hmac("sha256", $message, $this->apiSecret, true));
-    }
+	}
 
-    function __toString() {
-        return join(":", [$this->apiKey, $this->nonce, $this->timestamp, $this->companyCode, $this->signature]);
-    }
+	function __toString() {
+		return join(":", [$this->apiKey, $this->nonce, $this->timestamp, $this->companyCode, $this->signature]);
+	}
 }
 
 function random_string() {
-    return base64_encode(random_bytes(5));
+	return base64_encode(random_bytes(5));
 }
 
 function unix_time() {
-    return time();
+	return time();
 }
 
 $request = new Request();
@@ -74,6 +74,6 @@ $credentials->companyCode = "dev";
 $credentials->sign($request);
 
 # This section prints the signature and authorization string
-print("HMAC signature:       $credentials->signature\n");
-print("Digest string:        $credentials\n");
+print("HMAC signature:	   $credentials->signature\n");
+print("Digest string:		$credentials\n");
 print("Authorization header: ApiKey " . base64_encode($credentials) . "\n");
