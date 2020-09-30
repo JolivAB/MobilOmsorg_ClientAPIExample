@@ -37,7 +37,7 @@ class Request:
 	Contains information about the API request to be made.
 
 	Attributes
-    ----------
+	----------
 	method : str
 		The HTTP method for the request (e.g. GET, POST or PUT)
 	path : str
@@ -58,7 +58,7 @@ class Credentials:
 	Contains information to generate an authorization string.
 
 	Attributes
-    ----------
+	----------
 	apiKey : str
 		The API key you have been given to use against Mobil Omsorg
 	apiSecret : str
@@ -110,11 +110,12 @@ def unix_time() -> int:
 
 request = Request()
 request.method = "GET"
-request.path = "/api/BusinessIntelligence/GetAdmittedClients"
+request.path = "/api/BusinessIntelligence/GetActiveGroups"
 request.contentType = ""
 request.contentHash = ""
 
 credentials = Credentials()
+# Please note that this API key and secret only works in Joliv's internal environment
 credentials.apiKey = "a87a466d-52e4-4dde-8f1d-a6ff3a68209e"
 credentials.apiSecret = "eJFf7vJ4c2C7euY294PCxuSV5jVYK"
 credentials.nonce = random_string()
