@@ -65,10 +65,10 @@ with a space, and signed with the API secret:
 2. Request path in lowercase (e.g. "/api/groups/get")
 3. Content type in lowercase (e.g. "application/json") -- use empty string if
    the request body is empty
-4. Base64-encoded MD5 hash of the request body in UTF-8
-5. API secret
-6. Timestamp (same as above)
-7. Nonce (same as above)
+4. Base64-encoded MD5 hash of the request body in UTF-8 -- use empty string if
+   the request body is empty
+5. Timestamp (same as above)
+6. Nonce (same as above)
 
 Also, if the request contains a body (e.g. POST or PUT data), the request must
 include a `Content-MD5` header, with the same MD5 hash as #4 above.
