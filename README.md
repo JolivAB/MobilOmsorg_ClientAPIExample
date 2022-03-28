@@ -1,48 +1,48 @@
 # MobilOmsorg_ClientAPIExample
-Example projects for connecting to Mobil Omsorg API.
+Example projects for connecting to Epsilon API.
 
 # Background and Scope
 
-This document concerns authentication of an external system to Mobil Omsorg's API, using API keys.
+This document concerns authentication of an external system to Epsilon's API, using API keys.
 
-The external system is here called "Acme", and Mobil Omsorg is called "MO".
+The external system is here called "Acme", and Epsilon is called "Epsilon".
 
 # Key Concepts
 
 ## API Keys
 
-Authentication relies on two pieces of data that is shared between MO and Acme,
+Authentication relies on two pieces of data that is shared between Epsilon and Acme,
 
 1. an API key that _identifies_ Acme, and
 2. an API secret that _authenticates_ Acme.
 
 These strings must be stored in a responsible way, and if there is any risk of them
-getting into the wrong hands, Acme must notify Joliv, who will then generate a new set of
+getting into the wrong hands, Acme must notify Alfa eCare, who will then generate a new set of
 strings.
 
-Joliv generates and sends these strings to Acme, along with the URL for the testing and
+Alfa eCare generates and sends these strings to Acme, along with the URL for the testing and
 production environments.
 
 ## REST
 
-MO's API is RESTful and stateless, so each request must be authenticated.
+Epsilon's API is RESTful and stateless, so each request must be authenticated.
 
 ## JSON
 
-MO accepts data in the request body as JSON, with the content-type "application/json".
+Epsilon accepts data in the request body as JSON, with the content-type "application/json".
 
-MO returns data as JSON.
+Epsilon returns data as JSON.
 
 ## Company Code
 
-In MO, each customer database is identified by a "company code". A company code usually
+In Epsilon, each customer database is identified by a "company code". A company code usually
 identifies a customer organisation or site office.
 
 The company code is a required parameter for practically all API requests.
 
 # Authenticating an API Request
 
-Each request to MO must contain an Authorization header with the "ApiKey" type, and possibly a Content-MD5 header, like so,
+Each request to Epsilon must contain an Authorization header with the "ApiKey" type, and possibly a Content-MD5 header, like so,
 
 ```http
 GET /api/something
