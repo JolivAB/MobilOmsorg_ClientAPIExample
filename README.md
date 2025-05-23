@@ -122,5 +122,16 @@ private static string SignRequest(string method, Uri uri, string contentType, st
   }
 }
 ```
+# C# example of the use
+
+            const string baseUri = "https://api21.mobilomsorg.se";
+            ApiClient client = new ApiClient(new Uri(baseUri))
+            {
+                ApiKey = "ApiKeyId",
+                ApiSecret = "MyApiSecret",
+                CompanyCode = "MyCode"
+            };
+            string result = await client.Get("api/BusinessIntelligence/GetAdmittedClients", 
+                new { from = "2025-03-01", to = "2025-04-01" });
 
 The implementation of `GetRandomNonce()` is not included.
